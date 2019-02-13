@@ -15,6 +15,37 @@ namespace ProcessMem
             }
         }
 
-       
+        public void runningThreads()
+        {
+            string input = "";
+            Console.WriteLine("Please enter the PID for the Process: ");
+            input = Console.ReadLine();
+            int getPID = 0;
+            while(!int.TryParse(input, out getPID))
+            {
+                Console.WriteLine("Please ensure PID is an integer:");
+                input = Console.ReadLine();
+            }
+
+            string allThreads = string.Empty;
+
+            foreach (Process theprocess in processlist)
+            {
+                //https://social.msdn.microsoft.com/Forums/vstudio/en-US/905ecf98-57fb-4c7b-abb1-3b9489a6c98e/getting-list-of-running-threads?forum=csharpgeneral
+                if (theprocess.Id == getPID)
+                {
+                    //Get threads
+                    ProcessThreadCollection threads = theprocess.Threads;
+
+                    foreach(ProcessThread thread in threads)
+                    {
+                        allThreads += string.Format("Thread Id: {0}, ThreadState: {1}\r\n", thread.Id, thread.ThreadState);
+                    }
+
+                    Console.WriteLine(allThreads);
+                }
+            }
+            
+        }
     }
 }

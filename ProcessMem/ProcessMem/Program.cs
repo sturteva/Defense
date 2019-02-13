@@ -21,7 +21,7 @@ namespace ProcessMem
                         break;
 
                     case 2:
-
+                        myMem.runningThreads();
                         break;
 
                     case 3:

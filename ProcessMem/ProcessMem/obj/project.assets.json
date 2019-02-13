@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrew\\Documents\\Visual Studio 2017\\Projects\\ProcessMem\\ProcessMem\\ProcessMem.csproj",
+      "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\Defense\\ProcessMem\\ProcessMem\\ProcessMem.csproj",
       "projectName": "ProcessMem",
-      "projectPath": "C:\\Users\\Andrew\\Documents\\Visual Studio 2017\\Projects\\ProcessMem\\ProcessMem\\ProcessMem.csproj",
-      "outputPath": "C:\\Users\\Andrew\\Documents\\Visual Studio 2017\\Projects\\ProcessMem\\ProcessMem\\obj\\",
+      "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\Defense\\ProcessMem\\ProcessMem\\ProcessMem.csproj",
+      "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\Defense\\ProcessMem\\ProcessMem\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
