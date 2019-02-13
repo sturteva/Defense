@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+
+
 namespace ProcessMem
 {
     class MemoryLook
@@ -70,7 +72,9 @@ namespace ProcessMem
                     ProcessModuleCollection moduleCollection = theprocess.Modules;
                     foreach (ProcessModule module in moduleCollection)
                     {
-                        allMods += string.Format("{0}  | {1}  |  {2}\r\n",module.FileName,module.BaseAddress,module.EntryPointAddress);
+                        string baseAddress = module.BaseAddress.ToString("X8");
+                        string entryAddress = module.EntryPointAddress.ToString("X8");
+                        allMods += $"{module.ModuleName}  | {baseAddress}  |  {entryAddress}\r\n";
                     }
 
                     Console.WriteLine(allMods);
@@ -78,5 +82,9 @@ namespace ProcessMem
             }
 
         }
+
+      
+
+        
     }
 }

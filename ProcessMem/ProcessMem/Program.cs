@@ -33,7 +33,7 @@ namespace ProcessMem
                         break;
 
                     case 5:
-
+                        myMem.memoryScan();
                         break;
 
                     default:
