@@ -12,7 +12,7 @@ namespace ProcessMem
             int choice = mymenu.display();
             while(choice != 6)
             {
-                MemoryManip myMem = new MemoryManip();
+                MemoryLook myMem = new MemoryLook();
                 switch(choice)
                 {
 
@@ -25,7 +25,7 @@ namespace ProcessMem
                         break;
 
                     case 3:
-
+                        myMem.allModules();
                         break;
 
                     case 4:

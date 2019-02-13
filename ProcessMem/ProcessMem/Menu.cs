@@ -11,7 +11,7 @@ namespace ProcessMem
             Console.WriteLine("--------Please Enter Option---------------");
             Console.WriteLine("\t1 - Enumerate all running processes");
             Console.WriteLine("\t2 - List all running threads within process boundary");
-            Console.WriteLine("\t3 - Enumerate all the loaded modules within the processes");
+            Console.WriteLine("\t3 - Enumerate all the loaded modules within a process");
             Console.WriteLine("\t4 - Show All the Executable Pages within the process");
             Console.WriteLine("\t5 - Read Memory of a Process");
             Console.WriteLine("\t6 - Exit");
