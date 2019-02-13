@@ -7,12 +7,3 @@ c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\
 c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.dll
 c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.pdb
 c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.deps.json
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.runtimeconfig.json
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.runtimeconfig.dev.json
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.dll
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.pdb
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.AssemblyInfo.cs
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.dll
-C:\Users\Andrew\Documents\GitHub\Defense\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.pdb
