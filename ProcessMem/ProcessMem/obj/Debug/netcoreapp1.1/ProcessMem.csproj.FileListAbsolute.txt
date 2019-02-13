@@ -1,0 +1,9 @@
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.deps.json
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.runtimeconfig.json
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.runtimeconfig.dev.json
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.AssemblyInfo.cs
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.dll
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\bin\Debug\netcoreapp1.1\ProcessMem.pdb
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.dll
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.pdb
+c:\users\andrew\documents\visual studio 2017\Projects\ProcessMem\ProcessMem\obj\Debug\netcoreapp1.1\ProcessMem.csprojResolveAssemblyReference.cache
