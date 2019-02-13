@@ -72,8 +72,8 @@ namespace ProcessMem
                     ProcessModuleCollection moduleCollection = theprocess.Modules;
                     foreach (ProcessModule module in moduleCollection)
                     {
-                        string baseAddress = module.BaseAddress.ToString("X8");
-                        string entryAddress = module.EntryPointAddress.ToString("X8");
+                        string baseAddress = module.BaseAddress.ToString("X");
+                        string entryAddress = module.EntryPointAddress.ToString("X");
                         allMods += $"{module.ModuleName}  | {baseAddress}  |  {entryAddress}\r\n";
                     }
 
