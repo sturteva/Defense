@@ -29,11 +29,11 @@ namespace ProcessMem
                         break;
 
                     case 4:
-
+                        myMem.pages();
                         break;
 
                     case 5:
-                       // myMem.memoryScan();
+                       //myMem.memoryScan();
                         break;
 
                     default:
