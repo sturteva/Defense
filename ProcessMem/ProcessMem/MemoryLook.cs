@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-
 using System.Runtime.InteropServices;
+using System.Text;
+
 
 
 namespace ProcessMem
@@ -86,16 +87,6 @@ namespace ProcessMem
             }
 
         }
-
-        // REQUIRED METHODS
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
-
-        [DllImport("kernel32.dll")]
-        public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
-
-        /*[DllImport("kernel32.dll")]
-        static extern void GetSystemInfo(out SYSTEM_INFO lpSystemInfo);*/
 
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern int VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, uint dwLength);
@@ -211,6 +202,84 @@ namespace ProcessMem
             }
 
             Console.WriteLine(allMods);
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool ReadProcessMemory(
+                IntPtr hProcess,
+                IntPtr lpBaseAddress,
+                 byte[] lpBuffer,
+                Int32 nSize,
+                out IntPtr lpNumberOfBytesRead);
+
+        public void memoryScan()
+        {
+            string input = "";
+            Console.WriteLine("Please enter the PID for the Process: ");
+            input = Console.ReadLine();
+            int getPID = 0;
+            while (!int.TryParse(input, out getPID))
+            {
+                Console.WriteLine("Please ensure PID is an integer:");
+                input = Console.ReadLine();
+            }
+
+            Process process = null;
+            foreach (Process theprocess in processlist)
+            {
+                if (theprocess.Id == getPID)
+                {
+                    process = theprocess;
+                }
+            }
+            if (process == null)
+                return;
+
+
+            UTF8Encoding utf8 = new UTF8Encoding();
+            string lineMem = "";
+            string ascii = "";
+            ProcessModuleCollection moduleCollection = process.Modules;
+            foreach (ProcessModule module in moduleCollection)
+            {
+                    
+                
+                IntPtr numRead = (IntPtr)0;
+                byte[] buffer = new byte[0x1000];
+                bool read = ReadProcessMemory(process.Handle, module.BaseAddress, buffer, 0x1000,out numRead);
+
+                //Ensure it did not fail & that the AllocationProtection is an executable
+                if (read)
+                {
+                    int counter = 0;
+                    foreach (byte number in buffer)
+                    {
+                        if (counter < 7)
+                        {
+                            lineMem += number.ToString("X2") + " ";
+                            string tempString = utf8.GetString(new[] { number });
+                                               
+                            ascii += tempString;
+                            counter++;
+                        }
+
+                        else
+                        {
+                            lineMem += number.ToString("X2");
+                            Console.WriteLine(lineMem + " | " + ascii);
+                            
+                            lineMem = "";
+                            ascii = "";
+                            counter = 0;
+                        }
+                    }
+                }
+            }
+
+            
+            
+          
+
         }
     }
 }
