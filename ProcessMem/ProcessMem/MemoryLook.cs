@@ -235,45 +235,56 @@ namespace ProcessMem
             if (process == null)
                 return;
 
-
+            string moduleName = "";
+            Console.WriteLine("Please enter module name");
+            moduleName = Console.ReadLine();
+            bool modFound = false;
             UTF8Encoding utf8 = new UTF8Encoding();
             string lineMem = "";
             string ascii = "";
             ProcessModuleCollection moduleCollection = process.Modules;
             foreach (ProcessModule module in moduleCollection)
             {
-                    
-                
-                IntPtr numRead = (IntPtr)0;
-                byte[] buffer = new byte[0x1000];
-                bool read = ReadProcessMemory(process.Handle, module.BaseAddress, buffer, 0x1000,out numRead);
 
-                //Ensure it did not fail & that the AllocationProtection is an executable
-                if (read)
+                if (module.ModuleName == moduleName)
                 {
-                    int counter = 0;
-                    foreach (byte number in buffer)
-                    {
-                        if (counter < 7)
-                        {
-                            lineMem += number.ToString("X2") + " ";
-                            string tempString = utf8.GetString(new[] { number });
-                                               
-                            ascii += tempString;
-                            counter++;
-                        }
+                    modFound = true;
+                    IntPtr numRead = (IntPtr)0;
+                    byte[] buffer = new byte[0x1000];
+                    bool read = ReadProcessMemory(process.Handle, module.BaseAddress, buffer, 0x1000, out numRead);
 
-                        else
+                    //Ensure it did not fail & that the AllocationProtection is an executable
+                    if (read)
+                    {
+                        int counter = 0;
+                        foreach (byte number in buffer)
                         {
-                            lineMem += number.ToString("X2");
-                            Console.WriteLine(lineMem + " | " + ascii);
-                            
-                            lineMem = "";
-                            ascii = "";
-                            counter = 0;
+                            if (counter < 7)
+                            {
+                                lineMem += number.ToString("X2") + " ";
+                                string tempString = utf8.GetString(new[] { number });
+
+                                ascii += tempString;
+                                counter++;
+                            }
+
+                            else
+                            {
+                                lineMem += number.ToString("X2");
+                                Console.WriteLine(lineMem + " | " + ascii);
+
+                                lineMem = "";
+                                ascii = "";
+                                counter = 0;
+                            }
                         }
                     }
                 }
+            }
+
+            if (!modFound)
+            {
+                Console.WriteLine("Module not found");
             }
 
             
